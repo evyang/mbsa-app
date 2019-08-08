@@ -3,6 +3,7 @@ var path = require('path');
 
 var server = require('./routes/server');
 var signin = require('./routes/signin');
+var elements = require('./routes/elements');
 
 var app = express();
 
@@ -17,6 +18,8 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/', server);
 app.use('/signin', signin);
+app.use('/elements', elements);
+
 
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
