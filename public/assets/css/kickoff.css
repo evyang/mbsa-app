@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
+@import url("https://fonts.googleapis.com/css?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("hover-min.css");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #ffe53b;
+  background-image: url(https://i.imgur.com/nIqnl10.png);
+  font-family: "Fira Sans", sans-serif;
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: 2300px 2300px;
+}
+
+.titles {
+  font-family: "Oswald", sans-serif;
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  vertical-align: center;
+}
+
+.buttons {
+  border-radius: 30px;
+  color: black;
+  width: 285px;
+  padding: 15px;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  margin: 5px;
+  border: 1px;
+  border-style: solid;
+  border-color: white;
+}
+
+.big {
+  max-width: 800px;
+  width: 800px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 30em;
+  height: 18em;
+  margin-top: -12em; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em;
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+  .content {
+    height: 30vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}

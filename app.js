@@ -1,10 +1,11 @@
-var express = require('express');
-var path = require('path');
+var express = require("express");
+var path = require("path");
 
-var server = require('./routes/server');
-var signin = require('./routes/signin');
-var elements = require('./routes/elements');
-var recentemail = require('./routes/recentemail');
+var server = require("./routes/server");
+var signin = require("./routes/signin");
+var elements = require("./routes/elements");
+var recentemail = require("./routes/recentemail");
+var kickoff = require("./routes/kickoff");
 
 var app = express();
 
@@ -13,22 +14,22 @@ var app = express();
 var port = process.env.PORT || 8080;
 
 // set the view engine to ejs
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + "/public"));
 
-app.use('/', server);
-app.use('/signin', signin);
-app.use('/elements', elements);
-app.use('/recentemail', recentemail);
+app.use("/", server);
+app.use("/signin", signin);
+app.use("/elements", elements);
+app.use("/recentemail", recentemail);
+app.use("/kickoff", kickoff);
 
-
-app.use(function (req, res, next) {
-  var err = new Error('Not Found');
+app.use(function(req, res, next) {
+  var err = new Error("Not Found");
   err.status = 404;
   next(err);
 });
 
 app.listen(port, function() {
-	console.log('Our app is running on http://localhost:' + port);
+  console.log("Our app is running on http://localhost:" + port);
 });
