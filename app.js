@@ -7,6 +7,7 @@ var elements = require("./routes/elements");
 var recentemail = require("./routes/recentemail");
 var kickoff = require("./routes/kickoff");
 var committees = require("./routes/committees");
+var importantlinks = require("./routes/importantlinks");
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use("/elements", elements);
 app.use("/recentemail", recentemail);
 app.use("/kickoff", kickoff);
 app.use("/committees", committees);
+app.use("/importantlinks", importantlinks);
 
 app.use(function(req, res, next) {
   var err = new Error("Not Found");
